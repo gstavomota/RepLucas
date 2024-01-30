@@ -8,8 +8,10 @@ from (
 select tipo, unidade, codPessoa, chapa, nome, admissao, codSecao, secao, codFuncao, funcao, codRequisito, codCurso, nomeCurso, codGrupoCurso, diasValidade, revCurso, geraPendencia, online, urlCurso, dtTurma, dateAdd(day,diasValidade,dtTurma) as dtProximoTre,
 
         case
-		when dtTurma is null then 'Pendente'
+		when dtTurma is null then 
 		when diasValidade=0 and dtTurma is not null then 'No prazo'
+        testeeeeee
+        nova branch
 		when diasValidade>0 and dateAdd(day,diasValidade,dtTurma)<getdate() then 'Vencido'
 		when diasValidade>0 and dateAdd(day,diasValidade,dtTurma) between getdate() and dateadd(day,31,getdate()) then 'Próximo do vencimento'
 		when diasValidade>0 and dateAdd(day,diasValidade,dtTurma) between dateadd(day,31,getdate()) and dateadd(day,60,getdate()) then 'Requer programação'
