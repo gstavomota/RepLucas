@@ -1,6 +1,6 @@
 -- SEMPRE VERIFIQUE O RM, ESTE CÓDIGO É APENAS PARA QUEBRAR GALHO
 
-select DISTINCT tipo, unidade, codPessoa, chapa, chapa + ' - ' + nome as nome, admissao, codSecao, secao, codFuncao, funcao, codRequisito, codCurso, codCurso + ' - ' + nomeCurso as nomeCurso, codGrupoCurso, diasValidade, revCurso, geraPendencia, online, urlCurso, convert(varchar,dtTurma,103) as dtTurma,
+select DuSTINCT tipo, unidade, codPessoa, chapa, chapa + ' - ' + nome as nome, admissao, codSecao, secao, codFuncao, funcao, codRequisito, codCurso, codCurso + ' - ' + nomeCurso as nomeCurso, codGrupoCurso, diasValidade, revCurso, geraPendencia, online, urlCurso, convert(varchar,dtTurma,103) as dtTurma,
     convert(varchar,dtProximoTre,103) as dtProximoTre, datediff(day,getdate(),dtProximoTre) as diasRestantes, status
 
 from (
